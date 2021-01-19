@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+
+#This program will calculate HCF and LCM of two numbers
+#Note: LCM * HCF = number1 * number2
+
+
+
+def hcf(x,y):
+    if x>y:
+        greater = x
+        smaller = y
+    else:
+        greater = y
+        smaller = x
+
+    rem = greater%smaller
+
+    while rem > 0:
+        greater = smaller
+        smaller = rem
+        rem = greater%smaller
+        continue
+
+    ans = smaller
+    return(ans)
+
+
+print('This program will give you the HCF and LCM of two numbers of your choice')
+x = int(input('Enter first number'))
+y = int(input('Enter second number'))
+
+lcm = x*y/hcf(x,y)
+
+print('HCF of', x,'and',y,'is = ',hcf(x,y))
+print('LCM of', x,'and',y,'is = ',lcm)
